@@ -426,23 +426,9 @@ function drawCertificate(name, number) {
 
       ctx.font = "700 72px 'Amiri', serif";
 
-const w1 = ctx.measureText("وثيقة ").width;
-const w2 = ctx.measureText("الوفاء ").width;
-const w3 = ctx.measureText("لبلدة عبسان الجديدة").width;
-const totalW = w1 + w2 + w3;
-const startX = W/2 + totalW/2;
-
-ctx.fillStyle = "#2D5016";
-ctx.textAlign = "right";
-ctx.fillText("لبلدة عبسان الجديدة", startX, 430);
-
-ctx.fillStyle = "#8B1A1A";
-ctx.fillText("الوفاء ", startX - w3, 430);
-
 ctx.fillStyle = "#1A1A1A";
-ctx.fillText("وثيقة ", startX - w3 - w2, 430);
-
-ctx.textAlign = "center";
+ctx.font = "700 72px 'Amiri', serif";
+ctx.fillText("وثيقة الوفاء لبلدة عبسان الجديدة", W/2, 430);
 
       drawDivider(ctx, W/2, 520, 600);
 
