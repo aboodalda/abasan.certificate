@@ -465,11 +465,19 @@ ctx.fillText("وثيقة الوفاء لبلدة عبسان الجديدة", W/2
 
         const lineY = 1160;
         ctx.strokeStyle = "#1A1A1A"; ctx.lineWidth = 1.5;
-        ctx.beginPath(); ctx.moveTo(200, lineY); ctx.lineTo(520, lineY); ctx.stroke();
-        ctx.fillStyle = "#1A1A1A"; ctx.font = "600 26px 'Cairo', sans-serif";
-        ctx.fillText("لجنة أبناء عبسان الجديدة", 360, lineY+30);
-        ctx.beginPath(); ctx.moveTo(W-520, lineY); ctx.lineTo(W-200, lineY); ctx.stroke();
-        ctx.fillText("مكتب وثائق الوفاء", W-360, lineY+30);
+        // توقيع يمين
+ctx.beginPath(); ctx.moveTo(200, lineY); ctx.lineTo(520, lineY); ctx.stroke();
+ctx.fillStyle = "#2D5016"; ctx.font = "italic 700 32px 'Amiri', serif";
+ctx.fillText("بلدية عبسان الجديدة", 360, lineY-20);
+ctx.fillStyle = "#1A1A1A"; ctx.font = "600 24px 'Cairo', sans-serif";
+ctx.fillText("لجنة أبناء عبسان الجديدة", 360, lineY+30);
+
+// توقيع يسار
+ctx.beginPath(); ctx.moveTo(W-520, lineY); ctx.lineTo(W-200, lineY); ctx.stroke();
+ctx.fillStyle = "#2D5016"; ctx.font = "italic 700 32px 'Amiri', serif";
+ctx.fillText("بلدية عبسان الجديدة", W-360, lineY-20);
+ctx.fillStyle = "#1A1A1A"; ctx.font = "600 24px 'Cairo', sans-serif";
+ctx.fillText("مكتب وثائق الوفاء", W-360, lineY+30);
 
         const fb = ctx.createLinearGradient(0, H-180, 0, H-80);
         fb.addColorStop(0, "rgba(45,80,22,.0)");
