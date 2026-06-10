@@ -459,22 +459,7 @@ ctx.fillText("وثيقة الوفاء لبلدة عبسان الجديدة", W/2
       ctx.font = "700 32px 'Courier New', monospace";
       ctx.fillText(serial, W/2, 900);
 
-      const qr = new Image(); qr.crossOrigin = "anonymous";
-      qr.onload = () => {
-        ctx.fillStyle = "white";
-        roundRect(ctx, 90, 870, 160, 160, 10); ctx.fill();
-        ctx.strokeStyle = "#B8860B"; ctx.lineWidth = 2;
-        roundRect(ctx, 90, 870, 160, 160, 10); ctx.stroke();
-        ctx.drawImage(qr, 100, 880, 140, 140);
-        ctx.fillStyle = "#6B6351";
-        ctx.font = "22px 'Cairo', sans-serif";
-        ctx.fillText("رمز التحقق", 170, 1050);
-        finalize();
-      };
-      qr.onerror = finalize;
-      qr.src = "https://api.qrserver.com/v1/create-qr-code/?size=140x140&data="
-             + encodeURIComponent("https://aboodalda.github.io/abasan-certificate/?id=" + number);
-
+      finalize();
       function finalize() {
         drawSeal(ctx, W - 200, 950, 110);
 
