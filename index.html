@@ -455,10 +455,18 @@ ctx.fillText("وثيقة الوفاء لبلدة عبسان الجديدة", W/2
       drawDivider(ctx, W/2, 850, 400);
 
       const serial = "ABASAN-2026-" + String(number).padStart(6, "0");
-      ctx.fillStyle = "#2D5016";
-      ctx.font = "700 32px 'Courier New', monospace";
-      ctx.fillText(serial, W/2, 900);
+const now = new Date();
+const dateStr = now.toLocaleDateString("ar-EG", {
+  year: "numeric", month: "long", day: "numeric"
+});
 
+ctx.fillStyle = "#2D5016";
+ctx.font = "700 32px 'Courier New', monospace";
+ctx.fillText(serial, W/2, 890);
+
+ctx.fillStyle = "#6B6351";
+ctx.font = "400 28px 'Cairo', sans-serif";
+ctx.fillText("تاريخ الإصدار: " + dateStr, W/2, 935);
       finalize();
       function finalize() {
         drawSeal(ctx, W - 200, 950, 110);
